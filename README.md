@@ -5,3 +5,4 @@ Cluedo game developed for an ironhack webinar using JS, HTML & CSS
 
 ## Final Product:
 ![image](https://user-images.githubusercontent.com/70658678/128599631-e1f5f2a9-20a8-4bf5-a5bb-a085bb05531d.png)
+[Link to the preview](https://saramansori.github.io/cluedo-webinar/)
