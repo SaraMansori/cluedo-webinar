@@ -4,16 +4,50 @@
         <meta charset="UTF-8" />
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link rel="stylesheet" href="./index.css" />
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link
+            href="https://fonts.googleapis.com/css2?family=Roboto"
+            rel="stylesheet"
+        />
         <title>Cluedo</title>
     </head>
     <body>
-        <h1>Clue. Find the murderer!</h1>
-        <input type="text" placeholder="Suspect" id="suspect" />
-        killed Mr. Boddy in the
-        <input type="text" placeholder="Room" id="room" />
-        with the
-        <input type="text" placeholder="Weapon" id="weapon" />
-        <button>Guess</button>
+        <h1>Clue</h1>
+        <h2>find the murderer!</h2>
+        <section class="textSection">
+            <input type="text" placeholder="Suspect" id="suspect" />
+            killed Mr. Boddy in the
+            <input type="text" placeholder="Room" id="room" />
+            <br />
+            with the
+            <input type="text" placeholder="weapon" id="weapon" /> .
+            <br />
+            <button>Guess</button>
+        </section>
+        <br />
+        <div class="infoSection">
+            <section class="suspects">
+                <h3>Suspects</h3>
+                <p class="suspectsList"></p>
+            </section>
+            <section class="rooms">
+                <h3>Rooms</h3>
+                <p class="roomsList"></p>
+            </section>
+            <section class="weapons">
+                <h3>Weapons</h3>
+                <p class="weaponsList"></p>
+            </section>
+        </div>
+        <div class="image">
+            <img
+                src="./images/house.svg"
+                alt="house-picture"
+                class="houseImage"
+            />
+        </div>
         <script src="/index.js"></script>
     </body>
 </html>

@@ -1,5 +1,4 @@
 //Suspects
-
 let mrGreen = {
     name: "Jacob Green",
     occupation: "Entrepreneur",
@@ -207,9 +206,21 @@ showArrays(roomsArray);
 
 //Loops through all arrays and show's all items names
 function showArrays(arr) {
-    console.log(arr);
     arr.forEach(function (eachItem) {
-        document.body.innerHTML += `<li>${eachItem.name} </li>`;
+        if (arr === suspectsArray) {
+            document.querySelector(
+                ".suspectsList"
+            ).innerHTML += `<li>${eachItem.name} </li>`;
+        } else if (arr === weaponsArray) {
+            document.querySelector(
+                ".weaponsList"
+            ).innerHTML += `<li>${eachItem.name} </li>`;
+        } else if (arr === roomsArray) {
+            document.querySelector(
+                ".roomsList"
+            ).innerHTML += `<li>${eachItem.name} </li>`;
+        }
+        // document.body.innerHTML += `<li>${eachItem.name} </li>`;
     });
 }
 
@@ -230,7 +241,9 @@ function guess() {
             `${mystery.suspect.name} killed Mr. Boddy in the ${mystery.room.name} with the ${mystery.weapon.name}.`
         );
     }
-    document.body.innerHTML = `<img src=${mystery.suspect.image}">`;
+    document.querySelector(
+        ".image"
+    ).innerHTML = `<img src="${mystery.suspect.image}" class="murdererImage">`;
 }
 
 document.querySelector("button").onclick = guess;
