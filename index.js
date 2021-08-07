@@ -190,12 +190,47 @@ let roomsArray = [
     patio,
 ];
 
-console.log(randomRoom, randomWeapon, randomSuspect);
-
+//Gets random item from each array and constructs the mystery
 function pickMystery() {
-    let randomRoom = roomsArray[Math.floor(Math.random() * roomsArray.length)];
-    let randomWeapon =
-        weaponsArray[Math.floor(Math.random() * weaponsArray.length)];
-    let randomSuspect =
+    let room = roomsArray[Math.floor(Math.random() * roomsArray.length)];
+    let weapon = weaponsArray[Math.floor(Math.random() * weaponsArray.length)];
+    let suspect =
         suspectsArray[Math.floor(Math.random() * suspectsArray.length)];
+
+    return { suspect, weapon, room };
 }
+
+let mystery = pickMystery(); //Who killed Mr. Boddy with what in which room...
+showArrays(suspectsArray);
+showArrays(weaponsArray);
+showArrays(roomsArray);
+
+//Loops through all arrays and show's all items names
+function showArrays(arr) {
+    console.log(arr);
+    arr.forEach(function (eachItem) {
+        document.body.innerHTML += `<li>${eachItem.name} </li>`;
+    });
+}
+
+function guess() {
+    let guessedSuspect = document.querySelector("#suspect").value;
+    let guessedWeapon = document.querySelector("#weapon").value;
+    let guessedRoom = document.querySelector("#room").value;
+
+    if (
+        guessedSuspect === mystery.suspect.name &&
+        guessedWeapon === mystery.weapon.name &&
+        guessedRoom === mystery.room.name
+    ) {
+        alert("You guessed right! You win!");
+    } else {
+        alert("You guessed wrong");
+        alert(
+            `${mystery.suspect.name} killed Mr. Boddy in the ${mystery.room.name} with the ${mystery.weapon.name}.`
+        );
+    }
+    document.body.innerHTML = `<img src=${mystery.suspect.image}">`;
+}
+
+document.querySelector("button").onclick = guess;
